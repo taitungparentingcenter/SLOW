@@ -234,7 +234,7 @@ const done=c=>DATA.filter(x=>x.done&&(c==='all'||x.c===c)).length;
 const plan=c=>DATA.filter(x=>c==='all'||x.c===c).length;
 
 function renderIndex(){
- $('#index').innerHTML=CATS.map(c=>`<button class="idx${c.f?' feat':''}${st.cat===c.id?' on':''}" data-c="${c.id}"><span class="row"><span class="ic">${svg(c.id)}</span><span class="tx"><b>${c.n}</b><span>${done(c.id)?done(c.id)+' 則問答':'即將推出'}</span></span></span></button>`).join('');
+ $('#index').innerHTML=CATS.map(c=>`<button class="idx${c.f?' feat':''}${st.cat===c.id?' on':''}" data-c="${c.id}"><span class="row"><span class="ic">${svg(c.id)}</span><span class="tx"><b>${c.n}</b></span></span></button>`).join('');
  $('#chips').innerHTML=[{id:'all',n:'全部'}].concat(CATS).map(c=>`<button class="chip${st.cat===c.id?' on':''}" data-c="${c.id}">${c.id==='all'?'全部':c.n.replace(/：.*/,'')}</button>`).join('');
 }
 function hl(t,q){
@@ -260,7 +260,7 @@ function render(){
  const hic=$('#hic');if(cat&&!q){hic.hidden=false;hic.innerHTML=svg(cat.id);hic.classList.toggle('feat',!!cat.f)}else hic.hidden=true;
  $('#ht').textContent=q?`搜尋「${q}」`:(cat?cat.n:'全部問答');
  const n=rows.filter(x=>x.done).length,p=rows.length-n;
- $('#hd').textContent=(q?`找到 ${n} 則問答`:(cat?cat.d+' ':'')+`目前有 ${n} 則問答`)+(p?`，另有 ${p} 則撰寫中。`:'。');
+ $('#hd').textContent=q?(n?'':'目前沒有相符的問答。'):(cat?cat.d:'點選上方分類，或直接搜尋你想問的問題。');
  $('#list').innerHTML=shown.length?shown.map(x=>item(x,q)).join(''):`<div class="empty">${q?(p&&!st.todo?'相關題目還在撰寫中，可勾選「顯示即將推出的題目」查看。':'找不到相關問答，試試其他說法，例如「生氣」「哭」「回家」。'):'這個分類的問答正在撰寫中，敬請期待。'}</div>`;
 }
 function go(c,scroll){
