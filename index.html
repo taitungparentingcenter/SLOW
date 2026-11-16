@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>照顧者親職問答</title>
+<title>陪孩子走這一段路</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -18,14 +18,29 @@
 --band:light-dark(#f6b04a,#5a3a14);--bandink:light-dark(#2b1a08,#fbe9d2);
 --card:light-dark(#ffffff,#2a211a);--line:light-dark(#efe2d1,#3d3127);
 --acc:light-dark(#1f6fa8,#7cc0ee);--accbg:light-dark(#e6f1fa,#1d3446);
---tab:light-dark(#fff3e1,#3a2a1b);--tabon:light-dark(#2b2118,#f4ebe0);--tabonink:light-dark(#fffaf3,#1d1712)}
+--tab:light-dark(#fff3e1,#3a2a1b);--coral:light-dark(#d9573f,#ff9a84);--coralbg:light-dark(#fde6df,#4a2620);
+--sun:light-dark(#fff1b8,#f3c766);--hill:light-dark(#fbc874,#6e4a1c);--shade:light-dark(rgba(120,60,0,.15),rgba(0,0,0,.25));--wall:light-dark(#fffaf3,#f1e3cf);--roof:light-dark(#8a4b2a,#c07a4c);--win:#ffd25e;--door:light-dark(#7cb6e0,#4f8fbf);--leaf:light-dark(#8cc084,#6fa267);--skin:#f2c9a0;--adult:light-dark(#2e7fb8,#5aa6dd);--kid:light-dark(#e2674f,#ff8a72);--ink2:light-dark(#4a3426,#2b1d14);--tabon:light-dark(#2b2118,#f4ebe0);--tabonink:light-dark(#fffaf3,#1d1712)}
 :root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
 *{box-sizing:border-box;min-width:0}
 body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.75 "Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;overflow-x:clip}
 .band{padding:clamp(28px,4vw,56px) max(5vw,16px)}
 .wrap{max-width:1180px;margin:0 auto}
-header.band{background:var(--band);color:var(--bandink);padding-bottom:clamp(24px,3vw,40px)}
-h1{font-size:clamp(30px,4.6vw,48px);line-height:1.15;font-weight:900;margin:0 0 8px;text-wrap:balance}
+header.band{background:var(--band);color:var(--bandink);padding-bottom:clamp(56px,6vw,80px);position:relative}
+.hero{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(20px,4vw,48px);align-items:center}
+.art{margin:0;max-width:420px;justify-self:end;width:100%}.art svg{display:block;width:100%;height:auto}
+.art .h1,.art .h2,.art .h3{animation:float 4s ease-in-out infinite;transform-box:fill-box;transform-origin:center}.art .h2{animation-delay:1.3s}.art .h3{animation-delay:2.4s}
+@keyframes float{50%{transform:translateY(-8px)}}
+.wave{position:absolute;left:0;bottom:-1px;width:100%;height:36px;display:block}
+.ic{flex:none;display:inline-grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--accbg);color:var(--acc)}
+.ic svg{width:22px;height:22px}
+.feat .ic,.hic.feat{background:var(--coralbg);color:var(--coral)}
+.idx .row{display:flex;gap:12px;align-items:center}
+.idx .tx{display:flex;flex-direction:column;gap:2px}
+.on .ic{background:rgba(255,255,255,.14);color:inherit}
+.ttl{display:flex;gap:12px;align-items:center}
+.ttl .ic{width:46px;height:46px}.ttl .ic svg{width:26px;height:26px}
+footer .sos{display:flex;gap:8px;align-items:flex-start}footer .sos svg{flex:none;margin-top:3px;color:var(--coral)}
+h1{font-size:clamp(30px,4.4vw,46px);line-height:1.25;font-weight:900;margin:0 0 8px;text-wrap:balance}
 .lede{margin:0 0 22px;max-width:62ch;font-size:17px}
 .search{display:flex;gap:10px;align-items:center;background:var(--card);border-radius:16px;padding:6px 6px 6px 18px;box-shadow:0 6px 0 rgba(43,26,8,.18);max-width:760px}
 .search svg{flex:none;color:var(--soft)}
@@ -36,7 +51,7 @@ h1{font-size:clamp(30px,4.6vw,48px);line-height:1.15;font-weight:900;margin:0 0 
 .index{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin-top:26px}
 .idx{display:flex;flex-direction:column;gap:2px;text-align:left;border:0;cursor:pointer;font:inherit;color:var(--ink);background:var(--tab);border-radius:14px 14px 14px 4px;padding:14px 16px;min-height:84px;box-shadow:0 3px 0 rgba(43,26,8,.15);transition:transform .15s}
 .idx:hover{transform:translateY(-2px)}
-.idx b{font-size:16.5px;line-height:1.35}
+.idx b{font-size:16px;line-height:1.35}
 .idx span{font-size:13.5px;color:var(--soft)}
 .idx.feat{background:var(--card)}
 .idx.on{background:var(--tabon);color:var(--tabonink)}.idx.on span{color:inherit;opacity:.8}
@@ -88,33 +103,57 @@ footer p{margin:0 0 6px;max-width:75ch}
  .search button{display:none}
  .search input{font-size:16px}
  h1{font-size:28px}
+ .hero{grid-template-columns:minmax(0,1fr);gap:8px}
+ .art{order:-1;max-width:240px;justify-self:center}
+ .idx .row{gap:10px}.idx .ic{width:34px;height:34px}.idx .ic svg{width:19px;height:19px}
+ .ttl .ic{width:40px;height:40px}
  nav.strip{display:none}
  .back{display:inline-flex}
  .head{flex-direction:column;align-items:stretch;gap:4px}
  .src ul{padding-left:1em}
 }
-@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
 </head>
 <body>
 <header class="band">
  <div class="wrap">
-  <h1>照顧安置兒少的親職問答</h1>
-  <p class="lede">給照顧者們的實用小指南。孩子哭鬧、生氣、想家的時候，可以先來這裡找方法。</p>
+  <div class="hero"><div class="intro">
+  <h1>謝謝你，<br>陪孩子走這一段路</h1>
+  <p class="lede">給照顧者們的實用小指南。你的陪伴，正在一點一點改變孩子的生命。孩子哭鬧、生氣、想家的時候，這裡有些小方法，陪你一起想。</p>
   <form class="search" id="sf" role="search">
    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
    <input id="q" type="search" placeholder="搜尋，例如：哭鬧、想回家" aria-label="搜尋問答" autocomplete="off">
    <button type="button" id="clr">清除</button>
   </form>
   <p class="hint">這些關鍵字和官方LINE相同，在LINE輸入也能收到同樣的答案。</p>
+  </div><figure class="art" aria-hidden="true"><svg viewBox="0 0 400 280" role="presentation">
+ <circle cx="322" cy="62" r="44" fill="var(--sun)" opacity=".35"/><circle cx="322" cy="62" r="30" fill="var(--sun)"/>
+ <ellipse cx="205" cy="244" rx="195" ry="30" fill="var(--hill)"/>
+ <ellipse cx="120" cy="232" rx="78" ry="7" fill="var(--shade)"/><ellipse cx="275" cy="234" rx="52" ry="6" fill="var(--shade)"/>
+ <rect x="150" y="88" width="16" height="34" rx="2" fill="var(--roof)"/>
+ <rect x="62" y="128" width="116" height="104" rx="8" fill="var(--wall)"/>
+ <path d="M46 138 120 76l74 62" fill="var(--roof)" stroke="var(--roof)" stroke-width="10" stroke-linejoin="round"/>
+ <rect x="80" y="152" width="34" height="30" rx="5" fill="var(--win)"/><path d="M97 152v30M80 167h34" stroke="var(--wall)" stroke-width="3"/>
+ <rect x="128" y="172" width="32" height="60" rx="16" fill="var(--door)"/><circle cx="152" cy="204" r="2.5" fill="var(--wall)"/>
+ <rect x="345" y="172" width="10" height="56" rx="3" fill="var(--roof)"/>
+ <circle cx="350" cy="158" r="26" fill="var(--leaf)"/><circle cx="334" cy="172" r="16" fill="var(--leaf)"/><circle cx="366" cy="174" r="15" fill="var(--leaf)"/>
+ <path d="M264 192 284 206" stroke="var(--skin)" stroke-width="7" stroke-linecap="round"/>
+ <rect x="240" y="206" width="9" height="26" rx="4" fill="var(--ink2)"/><rect x="253" y="206" width="9" height="26" rx="4" fill="var(--ink2)"/>
+ <rect x="234" y="166" width="34" height="50" rx="16" fill="var(--adult)"/><circle cx="251" cy="150" r="14" fill="var(--skin)"/>
+ <rect x="285" y="214" width="7" height="18" rx="3" fill="var(--ink2)"/><rect x="295" y="214" width="7" height="18" rx="3" fill="var(--ink2)"/>
+ <rect x="281" y="194" width="25" height="28" rx="12" fill="var(--kid)"/><circle cx="293" cy="181" r="11" fill="var(--skin)"/>
+ <g fill="var(--kid)"><path class="h1" d="M272 132c-4-6-12-2-8 4l8 7 8-7c4-6-4-10-8-4z"/><path class="h2" d="M300 150c-3-4-8-1-5 3l5 5 5-5c3-4-2-7-5-3z" opacity=".75"/><path class="h3" d="M150 70c-2.5-3.5-7-1-4.5 2.5L150 77l4.5-4.5c2.5-3.5-2-6-4.5-2.5z" opacity=".7"/></g>
+</svg></figure></div>
   <div class="index" id="index"></div>
  </div>
+<svg class="wave" viewBox="0 0 1440 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40V22C240 2 480 2 720 20S1200 40 1440 14V40z" fill="var(--bg)"/></svg>
 </header>
 <nav class="strip" aria-label="分類"><div class="wrap" id="chips"></div></nav>
 <main class="band">
  <div class="wrap">
   <div class="head">
-   <div><button class="back" id="back" type="button">← 看所有分類</button><h2 id="ht">全部問答</h2><p class="desc" id="hd"></p></div>
+   <div><button class="back" id="back" type="button">← 看所有分類</button><div class="ttl"><span class="ic hic" id="hic" hidden></span><h2 id="ht">全部問答</h2></div><p class="desc" id="hd"></p></div>
    <label class="tog"><input type="checkbox" id="showTodo">顯示即將推出的題目</label>
   </div>
   <div class="list" id="list"></div>
@@ -122,7 +161,7 @@ footer p{margin:0 0 6px;max-width:75ch}
 </main>
 <footer class="band">
  <div class="wrap">
-  <p class="sos">若孩子有立即危險，請撥打 119／110；需要協助時，請聯絡您的社工。</p>
+  <p class="sos"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7.5-4.6-7.5-10.5A4.3 4.3 0 0 1 12 7.6a4.3 4.3 0 0 1 7.5 2.9C19.5 16.4 12 21 12 21z"/></svg><span>若孩子有立即危險，請撥打 119／110；需要協助時，請聯絡您的社工。</span></p>
   <p>本站內容為一般性親職教育資訊，不能取代專業評估。個別孩子的狀況，請與社工或專業人員討論。</p>
   <p>每則問答都附有參考資料，點開「參考資料」即可查看。</p>
  </div>
@@ -169,6 +208,23 @@ const CATS=[
  {id:'special',n:'特殊情況與轉銜',d:'孩子說出受傷經驗、失落悲傷、返家、收養與自立準備。'},
  {id:'self',n:'照顧者自我照顧',d:'照顧者也需要被照顧：疲憊、自責、喘息服務與支持網絡。'}
 ];
+const IC={
+ trauma:'M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10zM9.5 11h5M12 8.5v5',
+ calm:'M7 18h10a4 4 0 0 0 .5-8A6 6 0 0 0 6 9.5 4.3 4.3 0 0 0 7 18z',
+ expect:'M4 11 12 4l8 7v9h-5v-5h-6v5H4z',
+ settle:'M7 8h10a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2zM9 8V6a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2M5 13h14',
+ guide:'M12 3v18M12 6h6l2 2-2 2h-6M12 12H6l-2 2 2 2h6',
+ bond:'M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1',
+ family:'M8 5a3 3 0 1 0 0 6 3 3 0 1 0 0-6zM16 6.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 1 0 0-5zM3 19a5 5 0 0 1 10 0M13 19a4 4 0 0 1 8 0',
+ routine:'M12 8a4 4 0 1 0 0 8 4 4 0 1 0 0-8zM12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4',
+ school:'M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2zM4 21V5M8 7h7',
+ screen:'M9 3h6a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zM11 18h2',
+ health:'M12 21v-9M12 12c0-4-3-6-7-6 0 4 3 6 7 6zM12 14c0-4 3-6 7-6 0 4-3 6-7 6z',
+ teen:'M12 3l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.5 6.7 19.4l1.2-6L3.4 9.3l6-.7z',
+ special:'M5 21V4M5 4h11l-2 4 2 4H5',
+ self:'M5 9h11v6a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4zM16 11h1.5a2.5 2.5 0 0 1 0 5H16M8 3v3M11 3v3'
+};
+const svg=id=>`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${IC[id]}"/></svg>`;
 const $=s=>document.querySelector(s);
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const st={cat:'all',q:'',todo:false};
@@ -178,7 +234,7 @@ const done=c=>DATA.filter(x=>x.done&&(c==='all'||x.c===c)).length;
 const plan=c=>DATA.filter(x=>c==='all'||x.c===c).length;
 
 function renderIndex(){
- $('#index').innerHTML=CATS.map(c=>`<button class="idx${c.f?' feat':''}${st.cat===c.id?' on':''}" data-c="${c.id}"><b>${c.n}</b><span>${done(c.id)?done(c.id)+' 則問答':'即將推出'}</span></button>`).join('');
+ $('#index').innerHTML=CATS.map(c=>`<button class="idx${c.f?' feat':''}${st.cat===c.id?' on':''}" data-c="${c.id}"><span class="row"><span class="ic">${svg(c.id)}</span><span class="tx"><b>${c.n}</b><span>${done(c.id)?done(c.id)+' 則問答':'即將推出'}</span></span></span></button>`).join('');
  $('#chips').innerHTML=[{id:'all',n:'全部'}].concat(CATS).map(c=>`<button class="chip${st.cat===c.id?' on':''}" data-c="${c.id}">${c.id==='all'?'全部':c.n.replace(/：.*/,'')}</button>`).join('');
 }
 function hl(t,q){
@@ -201,6 +257,7 @@ function render(){
  let rows=q?DATA.filter(x=>(x.t+x.k.join(' ')+x.b).includes(q)):DATA.filter(x=>st.cat==='all'||x.c===st.cat);
  const shown=rows.filter(x=>x.done||st.todo);
  const cat=CATS.find(c=>c.id===st.cat);
+ const hic=$('#hic');if(cat&&!q){hic.hidden=false;hic.innerHTML=svg(cat.id);hic.classList.toggle('feat',!!cat.f)}else hic.hidden=true;
  $('#ht').textContent=q?`搜尋「${q}」`:(cat?cat.n:'全部問答');
  const n=rows.filter(x=>x.done).length,p=rows.length-n;
  $('#hd').textContent=(q?`找到 ${n} 則問答`:(cat?cat.d+' ':'')+`目前有 ${n} 則問答`)+(p?`，另有 ${p} 則撰寫中。`:'。');
