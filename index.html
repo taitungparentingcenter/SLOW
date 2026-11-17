@@ -191,23 +191,46 @@ section.bk{background:var(--bg);border-top:1px solid var(--line)}
 .chip.sm{font-size:14px;min-height:36px;padding:4px 12px}
 .ac.book h3{font-size:18px}
 .bq,.br,.bv{margin:0;font-size:15px;line-height:1.65}
-.bq b{color:var(--acc)}.br{background:var(--coralbg);border-radius:10px;padding:8px 10px}.br b{color:var(--coral)}
+.bq b{color:var(--acc)}
+.bq ul{margin:4px 0 0;padding-left:1.3em}.bq li{margin:2px 0}.br{background:var(--coralbg);border-radius:10px;padding:8px 10px}.br b{color:var(--coral)}
 .bv{font-size:13px;color:var(--soft);margin-top:auto;padding-top:6px}
 .tgd{margin:0 0 6px}.tgd>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:10px;min-height:48px;border-bottom:1px solid var(--line);margin-bottom:12px}.tgd>summary::-webkit-details-marker{display:none}.tgd>summary::after{content:"＋";margin-left:auto;font-weight:700;color:var(--soft)}.tgd[open]>summary::after{content:"－"}.tgd>summary h3.tg{margin:8px 0!important}.tgd .tn{font-size:14px;color:var(--soft)}.tgd>summary:focus-visible{outline:3px solid var(--acc);outline-offset:2px}.tgd .rdlist{margin-bottom:18px}
 .bkmore{display:flex;margin:16px auto 0;align-items:center;min-height:46px;border-radius:12px;padding:8px 22px;font:inherit;font-weight:700;font-size:16px;cursor:pointer;border:1px solid var(--line);background:var(--card);color:var(--ink)}.bkmore[hidden]{display:none!important}.bkmore:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
 .resh{font-size:20px;font-weight:900;margin:34px 0 6px}
 .rdgo.rd2{background:var(--card)}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+.cover{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:4px 0 8px;max-width:760px}
+.ct{display:flex;gap:12px;align-items:center;background:var(--card);color:var(--ink);text-decoration:none;border-radius:18px;padding:16px;min-height:84px;box-shadow:0 4px 0 rgba(43,26,8,.15);transition:transform .15s}
+.ct:hover{transform:translateY(-2px)}.ct:focus-visible{outline:3px solid var(--acc);outline-offset:3px}
+.ct .ci{flex:none;display:grid;place-items:center;width:48px;height:48px;border-radius:14px;background:var(--band);color:var(--bandink)}
+.ct b{display:block;font-size:17.5px;line-height:1.3}.ct small{display:block;font-size:14px;line-height:1.45;opacity:.8;margin-top:2px}
+.ct.ln{background:#06c755;color:#fff}.ct.ln .ci{background:rgba(255,255,255,.2);color:#fff}
+@media(max-width:600px){.cover{grid-template-columns:minmax(0,1fr)}}
+.topbar{display:none;position:sticky;top:0;z-index:20;background:var(--band);color:var(--bandink);box-shadow:0 2px 8px rgba(0,0,0,.12)}
+.topbar .wrap{display:flex;align-items:center;gap:12px;padding:10px max(5vw,16px)}
+.topbar .home{display:inline-flex;align-items:center;min-height:44px;padding:8px 16px;border-radius:999px;background:var(--card);color:var(--ink);font-weight:700;text-decoration:none}
+.topbar .home:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+.topbar .pgn{font-weight:700;font-size:18px}
+body:not([data-view=home]) .topbar{display:block}
+body[data-view=home] main,body[data-view=home] section.band,body[data-view=home] #sf,body[data-view=home] .hpop,body[data-view=home] .hint,body[data-view=home] #index{display:none!important}
+body[data-view=qa] .lede,body[data-view=qa] .teaser,body[data-view=qa] .cover,body[data-view=qa] .art,body[data-view=qa] header h1,body[data-view=qa] section.band{display:none!important}
+body[data-view=qa] .hero{grid-template-columns:minmax(0,1fr)}
+body[data-view=qa] header.band{padding-top:8px}
+body[data-view=articles] header.band,body[data-view=articles] main,body[data-view=reading] header.band,body[data-view=reading] main,body[data-view=books] header.band,body[data-view=books] main,body[data-view=services] header.band,body[data-view=services] main{display:none!important}
+body[data-view=articles] section.band:not(#articles),body[data-view=reading] section.band:not(#reading),body[data-view=books] section.band:not(#books),body[data-view=services] section.band:not(#services){display:none!important}
 </style>
 </head>
 <body>
+<script>(function(){var S=['qa','articles','reading','books','services'];function v(){var h=location.hash.slice(1);var w=S.indexOf(h)>-1?h:(h&&h!=='home'?'qa':'home');document.body.setAttribute('data-view',w);var t={qa:'常見問答',articles:'每週好文',reading:'親子共讀',books:'好書推薦',services:'更多親子服務'};var e=document.getElementById('pgName');if(e)e.textContent=t[w]||'';return w}
+window.addEventListener('hashchange',function(){v();window.scrollTo(0,0)});document.addEventListener('DOMContentLoaded',v);v()})();</script>
+<div class="topbar" id="topbar"><div class="wrap"><a class="home" href="#home">← 回首頁</a><span class="pgn" id="pgName"></span></div></div>
 <header class="band">
  <div class="wrap">
   <div class="hero"><div class="intro">
   <h1>謝謝你，<br>陪孩子走這一段路</h1>
   <p class="lede">給照顧者們的實用小指南。你的陪伴，正在一點一點改變孩子的生命。孩子哭鬧、生氣、想家的時候，這裡有些小方法，陪你一起想。</p>
   <a class="teaser" id="rdTeaser" href="#articles" hidden></a>
-  <div class="quick"><a class="rdgo" href="#reading">親子共讀</a><a class="rdgo" href="#books">好書推薦</a><a class="rdgo" href="#services">更多親子服務</a><a class="rdgo ln" href="https://lin.ee/zpl0WwJ" target="_blank" rel="noopener">加入官方LINE</a></div>
+  <nav class="cover" aria-label="選擇要看的內容"><a class="ct" href="#qa"><span class="ci"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></span><span class="cx"><b>常見問答</b><small>孩子哭鬧、生氣、想家…輸入關鍵字找方法</small></span></a><a class="ct" href="#articles"><span class="ci"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6c-2-1.5-5-2-8-1.5v13c3-.5 6 0 8 1.5 2-1.5 5-2 8-1.5v-13c-3-.5-6 0-8 1.5zM12 6v13"/></svg></span><span class="cx"><b>每週好文</b><small>每週二一篇，也能找以前的文章</small></span></a><a class="ct" href="#reading"><span class="ci"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19V6a2 2 0 0 1 2-2h5v15H6a2 2 0 0 0-2 2zM20 19V6a2 2 0 0 0-2-2h-5v15h5a2 2 0 0 1 2 2"/></svg></span><span class="cx"><b>親子共讀</b><small>怎麼陪孩子讀、去哪裡借書</small></span></a><a class="ct" href="#books"><span class="ci"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4v16H5zM10 4h4v16h-4zM15.5 5l3.5-1 3 15-3.5 1z"/></svg></span><span class="cx"><b>好書推薦</b><small>0歲到高中，依年齡和主題挑書</small></span></a><a class="ct" href="#services"><span class="ci"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.6-7 10-7 10z"/></svg></span><span class="cx"><b>更多親子服務</b><small>教具陪玩、臺東親子活動</small></span></a><a class="ct ln" href="https://lin.ee/zpl0WwJ" target="_blank" rel="noopener"><span class="ci"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5c0-4.1-4-7.5-9-7.5s-9 3.4-9 7.5c0 3.7 3.2 6.8 7.6 7.4L10 22l3.4-3.1c4.5-.6 7.6-3.7 7.6-7.4z"/></svg></span><span class="cx"><b>加入官方LINE</b><small>關鍵字問答、每週好文直接收</small></span></a></nav>
   <form class="search" id="sf" role="search">
    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
    <input id="q" type="search" placeholder="搜尋，例如：哭鬧、想回家" aria-label="搜尋問答" autocomplete="off">
@@ -273,7 +296,7 @@ section.bk{background:var(--bg);border-top:1px solid var(--line)}
 </section>
 <section class="band bk" id="books" aria-labelledby="bkt">
  <div class="wrap">
-  <div class="head"><div><h2 id="bkt" class="rdh"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4v16H5zM10 4h4v16h-4zM15.5 5l3.5-1 3 15-3.5 1z"/></svg>兒少叢書推薦專區</h2><p class="desc">從0歲到高中，依年齡和主題挑選。每本書都附上可以一起聊的問題；有些書會談到家人、分離或死亡，也附上給照顧者的提醒。</p></div></div>
+  <div class="head"><div><h2 id="bkt" class="rdh"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4v16H5zM10 4h4v16h-4zM15.5 5l3.5-1 3 15-3.5 1z"/></svg>兒少叢書推薦專區</h2><p class="desc">從0歲到高中，依年齡和主題挑選。每本書都附上可以一起聊的問題；有些書會談到家人、分離或死亡，也附上小提醒。</p></div></div>
   <div class="bkf">
    <p class="lbl">孩子的年齡</p><div class="rdf" id="bkStage" role="group" aria-label="適讀階段" style="margin:0"></div>
    <p class="lbl">想讀的主題</p><div class="rdf" id="bkTheme" role="group" aria-label="主題" style="margin:0"></div>
@@ -408,7 +431,7 @@ function render(){
 }
 function go(c,scroll){
  st.cat=c;
- try{history.replaceState(null,'',c==='all'?location.pathname+location.search:'#'+c)}catch(e){location.hash=c==='all'?'':c}
+ try{history.replaceState(null,'','#'+(c==='all'?'qa':c))}catch(e){location.hash=c==='all'?'qa':c}
  render();
  if(scroll)document.querySelector('main').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
  const on=document.querySelector('.chip.on');if(on)on.scrollIntoView({block:'nearest',inline:'center'});
