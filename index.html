@@ -273,7 +273,7 @@ let DATA=[{"n": 1, "c": "calm", "t": "孩子哭鬧不休怎麼辦？", "k": ["�
 /* 內容來源：網頁打開時會先讀 Google 試算表「官方LINE親職教育問答_含好文分享」的「全年題庫」工作表。
    試算表要保持「知道連結的任何人都能檢視」。讀不到時，使用上面內建的資料。
    分類依「編號」決定；新增的編號會依「月份主題」歸類；若試算表有「網站分類」欄（填 trauma、calm…），以該欄為準。 */
-const SHEET_ID='1bO_TAZIK9jJ1PWXtAQaWuhbJpv5aWyFm2dLI-UCn5nY';
+const SHEET_ID='1UikOiJIpqRepS1tbh7uL19SW960NtxA_7O0O4nwKDFY';
 const sheetURL=(name,range)=>`https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&headers=1&sheet=${encodeURIComponent(name)}${range?'&range='+range:''}&t=${Date.now()}`;
 function parseCSV(t){const R=[];let row=[],f='',q=false;for(let i=0;i<t.length;i++){const c=t[i];if(q){if(c=='"'){if(t[i+1]=='"'){f+='"';i++}else q=false}else f+=c}else if(c=='"')q=true;else if(c==','){row.push(f);f=''}else if(c=='\n'||c=='\r'){if(c=='\r'&&t[i+1]=='\n')i++;row.push(f);R.push(row);row=[];f=''}else f+=c}if(f!==''||row.length){row.push(f);R.push(row)}return R}
 async function fetchSheet(name,range){const ctl=new AbortController();const tm=setTimeout(()=>ctl.abort(),6000);try{const r=await fetch(sheetURL(name,range),{signal:ctl.signal,cache:'no-store'});if(!r.ok)return[];const t=await r.text();if(/^\s*</.test(t))return[];const rows=parseCSV(t);const h=rows.shift()||[];return rows.map(r=>Object.fromEntries(h.map((k,i)=>[k.trim(),(r[i]||'').trim()])))}catch(e){return[]}finally{clearTimeout(tm)}}
