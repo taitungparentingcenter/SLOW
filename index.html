@@ -181,6 +181,22 @@ section.rd{background:light-dark(#1f6fa8,#16364d);border-top:0;color:#fff}
 .rd .rdmore>summary{color:var(--ink)}
 .rd .empty{color:var(--soft)}
 @media(max-width:600px){.teaser{grid-template-columns:auto minmax(0,1fr)}.teaser .tg{grid-column:1/-1;justify-self:start}}
+section.rz{background:var(--tab);border-top:1px solid var(--line)}
+section.bk{background:var(--bg);border-top:1px solid var(--line)}
+.rz h3.tg{font-size:19px;font-weight:900;margin:22px 0 10px}.rz h3.tg:first-child{margin-top:4px}
+.ac.tip h4{font-size:17px;line-height:1.45;margin:0;font-weight:700}
+.asrc a{color:var(--acc)}
+.bkf{display:grid;gap:10px;margin:6px 0 14px}
+.bkf .lbl{font-size:14px;font-weight:700;color:var(--soft);margin:0}
+.chip.sm{font-size:14px;min-height:36px;padding:4px 12px}
+.ac.book h3{font-size:18px}
+.bq,.br,.bv{margin:0;font-size:15px;line-height:1.65}
+.bq b{color:var(--acc)}.br{background:var(--coralbg);border-radius:10px;padding:8px 10px}.br b{color:var(--coral)}
+.bv{font-size:13px;color:var(--soft);margin-top:auto;padding-top:6px}
+.tgd{margin:0 0 6px}.tgd>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:10px;min-height:48px;border-bottom:1px solid var(--line);margin-bottom:12px}.tgd>summary::-webkit-details-marker{display:none}.tgd>summary::after{content:"＋";margin-left:auto;font-weight:700;color:var(--soft)}.tgd[open]>summary::after{content:"－"}.tgd>summary h3.tg{margin:8px 0!important}.tgd .tn{font-size:14px;color:var(--soft)}.tgd>summary:focus-visible{outline:3px solid var(--acc);outline-offset:2px}.tgd .rdlist{margin-bottom:18px}
+.bkmore{display:flex;margin:16px auto 0;align-items:center;min-height:46px;border-radius:12px;padding:8px 22px;font:inherit;font-weight:700;font-size:16px;cursor:pointer;border:1px solid var(--line);background:var(--card);color:var(--ink)}.bkmore:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+.resh{font-size:20px;font-weight:900;margin:34px 0 6px}
+.rdgo.rd2{background:var(--card)}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
 </head>
@@ -191,7 +207,7 @@ section.rd{background:light-dark(#1f6fa8,#16364d);border-top:0;color:#fff}
   <h1>謝謝你，<br>陪孩子走這一段路</h1>
   <p class="lede">給照顧者們的實用小指南。你的陪伴，正在一點一點改變孩子的生命。孩子哭鬧、生氣、想家的時候，這裡有些小方法，陪你一起想。</p>
   <a class="teaser" id="rdTeaser" href="#articles" hidden></a>
-  <div class="quick"><a class="rdgo" href="#services">更多親子服務</a><a class="rdgo ln" href="https://lin.ee/zpl0WwJ" target="_blank" rel="noopener">加入官方LINE</a></div>
+  <div class="quick"><a class="rdgo" href="#reading">親子共讀</a><a class="rdgo" href="#books">好書推薦</a><a class="rdgo" href="#services">更多親子服務</a><a class="rdgo ln" href="https://lin.ee/zpl0WwJ" target="_blank" rel="noopener">加入官方LINE</a></div>
   <form class="search" id="sf" role="search">
    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
    <input id="q" type="search" placeholder="搜尋，例如：哭鬧、想回家" aria-label="搜尋問答" autocomplete="off">
@@ -248,6 +264,29 @@ section.rd{background:light-dark(#1f6fa8,#16364d);border-top:0;color:#fff}
   </details>
  </div>
 </section>
+<section class="band rz" id="reading" aria-labelledby="rzt">
+ <div class="wrap">
+  <div class="head"><div><h2 id="rzt" class="rdh"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19V6a2 2 0 0 1 2-2h5v15H6a2 2 0 0 0-2 2zM20 19V6a2 2 0 0 0-2-2h-5v15h5a2 2 0 0 1 2 2"/></svg>親子共讀專區</h2><p class="desc">每天花幾分鐘和孩子一起讀，是最簡單、也最溫暖的陪伴。這裡整理了教育部、圖書館和醫院提供的共讀方法，也有給寄養、親屬和團體家庭照顧者的小提醒。</p></div></div>
+  <div class="rdf" id="tipChips" role="group" aria-label="依孩子年齡篩選"></div>
+  <div id="tipList"></div>
+ </div>
+</section>
+<section class="band bk" id="books" aria-labelledby="bkt">
+ <div class="wrap">
+  <div class="head"><div><h2 id="bkt" class="rdh"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4v16H5zM10 4h4v16h-4zM15.5 5l3.5-1 3 15-3.5 1z"/></svg>兒少叢書推薦專區</h2><p class="desc">從0歲到高中，依年齡和主題挑選。每本書都附上可以一起聊的問題；有些書會談到家人、分離或死亡，也附上給照顧者的提醒。</p></div></div>
+  <div class="bkf">
+   <p class="lbl">孩子的年齡</p><div class="rdf" id="bkStage" role="group" aria-label="適讀階段" style="margin:0"></div>
+   <p class="lbl">想讀的主題</p><div class="rdf" id="bkTheme" role="group" aria-label="主題" style="margin:0"></div>
+   <form class="rdq" id="bkQf" role="search" style="margin:4px 0 0"><div class="rdqbox"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input id="bkQ" type="search" placeholder="搜尋書名、作者或主題，例如：想念、生氣" aria-label="搜尋叢書" autocomplete="off"><button type="button" id="bkQc">清除</button></div></form>
+  </div>
+  <p class="rdcount" id="bkCount" aria-live="polite"></p>
+  <div class="rdlist" id="bkList"></div>
+  <button type="button" class="bkmore" id="bkMore" hidden></button>
+  <h3 class="resh">想找更多好書？</h3>
+  <p class="desc">下面這些書單由文化部、教育部和圖書館邀請專家評選，每年都會更新。</p>
+  <div class="rdlist" id="resList"></div>
+ </div>
+</section>
 <section class="band svc" id="services" aria-labelledby="svt">
  <div class="wrap">
   <div class="head"><div><h2 id="svt">我們還有這些服務</h2><p class="desc">除了教具陪玩示範，我們也整理了臺東的親子活動，還有官方LINE可以隨時問問題。都是免費的，歡迎多加利用。</p></div></div>
@@ -264,6 +303,7 @@ section.rd{background:light-dark(#1f6fa8,#16364d);border-top:0;color:#fff}
   <p>本站內容為一般性親職教育資訊，不能取代專業評估。個別孩子的狀況，請與社工或專業人員討論。</p>
   <p>每則問答都附有參考資料，點開「參考資料」即可查看。</p>
   <p>好文分享的文章與影片版權屬原作者與原單位，本站只提供摘要與連結。</p>
+  <p>叢書推薦的簡介為本站自行撰寫，書籍版本與出版資訊請以圖書館館藏資料為準。</p>
  </div>
 </footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
@@ -391,5 +431,6 @@ loadSheet().then(fromHash);
 }
 </script>
 <script src="articles.js"></script>
+<script src="books.js"></script>
 </body>
 </html>
