@@ -218,6 +218,7 @@ body[data-view=qa] .hero{grid-template-columns:minmax(0,1fr)}
 body[data-view=qa] header.band{padding-top:8px}
 body[data-view=articles] header.band,body[data-view=articles] main,body[data-view=reading] header.band,body[data-view=reading] main,body[data-view=books] header.band,body[data-view=books] main,body[data-view=services] header.band,body[data-view=services] main{display:none!important}
 body[data-view=articles] section.band:not(#articles),body[data-view=reading] section.band:not(#reading),body[data-view=books] section.band:not(#books),body[data-view=services] section.band:not(#services){display:none!important}
+.gov{display:flex;align-items:center;justify-content:center;gap:14px;width:fit-content;margin:18px auto 0;padding:10px 20px;background:#fff;border-radius:16px;box-shadow:0 1px 4px rgb(0 0 0/.12)}.gov img{display:block;height:64px;width:auto}.gov span{font-size:18px;font-weight:700;color:#1d3a52;letter-spacing:.04em}
 </style>
 </head>
 <body>
@@ -327,6 +328,7 @@ window.addEventListener('hashchange',function(){v();window.scrollTo(0,0)});docum
   <p>每則問答都附有參考資料，點開「參考資料」即可查看。</p>
   <p>好文分享的文章與影片版權屬原作者與原單位，本站只提供摘要與連結。</p>
   <p>叢書推薦的簡介為本站自行撰寫，書籍版本與出版資訊請以圖書館館藏資料為準。</p>
+  <div class="gov"><img src="img/ttgov-logo.png" alt="臺東縣政府" width="708" height="672"><span>臺東縣居家賦能計畫</span></div>
  </div>
 </footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
