@@ -169,7 +169,15 @@ main.band{padding-bottom:clamp(20px,3vw,36px)}
 .rdcount{font-size:14px;color:var(--soft);margin:0 0 10px}
 .hpop{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:12px;font-size:14.5px}.hpop .kw{background:var(--card);color:var(--ink);min-height:40px;padding:6px 14px;font-size:15px}
 .teaser{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:12px;align-items:center;max-width:760px;margin:0 0 16px;padding:14px 16px;border-radius:18px;background:light-dark(#1f6fa8,#1d3446);color:#fff;text-decoration:none;box-shadow:0 5px 0 rgba(10,40,70,.25);transition:transform .15s}
-.teaser[hidden]{display:none!important}.teaser:hover{transform:translateY(-2px)}.teaser:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.wkbox{max-width:760px;margin:0 0 16px;padding:12px 14px 6px;border-radius:18px;background:light-dark(#1f6fa8,#1d3446);color:#fff;box-shadow:0 5px 0 rgba(10,40,70,.25)}.wkbox[hidden],.wkr[hidden]{display:none!important}
+.wkbt{margin:0 0 4px;font-size:17px;font-weight:900;color:#fff}
+.wkr{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:12px;align-items:center;padding:10px 0;color:#fff;text-decoration:none;border-top:1px solid rgba(255,255,255,.25)}.wkbt+.wkr,.wkr[hidden]+.wkr{border-top:0}
+.wkr .tb{display:grid;place-items:center;width:42px;height:42px;border-radius:12px;background:rgba(255,255,255,.18)}
+.wkr .tl{display:block;font-size:13.5px;font-weight:700;opacity:.9}
+.wkr .tt{font-size:16px;font-weight:700;line-height:1.4;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.wkr .tg{font-size:0;display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#fff;color:#1f6fa8}.wkr .tg::after{content:"→";font-size:18px;font-weight:900}
+.wkr:focus-visible{outline:3px solid #fff;outline-offset:2px;border-radius:10px}.wkr:hover .tt{text-decoration:underline}
+.teaser:hover{transform:translateY(-2px)}.teaser:focus-visible{outline:3px solid #fff;outline-offset:3px}
 .teaser .tb{display:grid;place-items:center;width:46px;height:46px;border-radius:12px;background:rgba(255,255,255,.18)}
 .teaser .tl{display:block;font-size:13.5px;font-weight:700;opacity:.9}
 .teaser .tt{display:block;font-size:16.5px;font-weight:700;line-height:1.4;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
@@ -215,7 +223,7 @@ section.bk{background:var(--bg);border-top:1px solid var(--line)}
 .topbar .pgn{font-weight:700;font-size:18px}
 body:not([data-view=home]) .topbar{display:block}
 body[data-view=home] main,body[data-view=home] section.band,body[data-view=home] #sf,body[data-view=home] .hpop,body[data-view=home] .hint,body[data-view=home] #index{display:none!important}
-body[data-view=qa] .lede,body[data-view=qa] .teaser,body[data-view=qa] .cover,body[data-view=qa] .art,body[data-view=qa] header h1,body[data-view=qa] section.band{display:none!important}
+body[data-view=qa] .lede,body[data-view=qa] .wkbox,body[data-view=qa] .cover,body[data-view=qa] .art,body[data-view=qa] header h1,body[data-view=qa] section.band{display:none!important}
 body[data-view=qa] .hero{grid-template-columns:minmax(0,1fr)}
 body[data-view=qa] header.band{padding-top:8px}
 body[data-view=articles] header.band,body[data-view=articles] main,body[data-view=reading] header.band,body[data-view=reading] main,body[data-view=books] header.band,body[data-view=books] main,body[data-view=services] header.band,body[data-view=services] main{display:none!important}
@@ -241,8 +249,7 @@ function wk(){if(location.hash!=='#week')return;var n=0;(function f(){var b=docu
   <div class="hero"><div class="intro">
   <h1>謝謝你，<br>陪孩子走這一段路</h1>
   <p class="lede">給照顧者們的實用小指南。你的陪伴，正在一點一點改變孩子的生命。孩子哭鬧、生氣、想家的時候，這裡有些小方法，陪你一起想。</p>
-  <a class="teaser" id="rdTeaser" href="#articles" hidden></a>
-  <a class="teaser" id="vdTeaser" href="#week" hidden></a>
+  <section class="wkbox" id="wkBox" aria-label="本週推薦" hidden><h2 class="wkbt">本週推薦</h2><a class="wkr" id="rdTeaser" href="#articles" hidden></a><a class="wkr" id="vdTeaser" href="#week" hidden></a></section>
   <nav class="cover" aria-label="選擇要看的內容"><a class="ct" href="#qa"><span class="ci"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></span><span class="cx"><b>常見問答</b><small>孩子哭鬧、生氣、想家…輸入關鍵字找方法</small></span></a><a class="ct" href="#articles"><span class="ci"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6c-2-1.5-5-2-8-1.5v13c3-.5 6 0 8 1.5 2-1.5 5-2 8-1.5v-13c-3-.5-6 0-8 1.5zM12 6v13"/></svg></span><span class="cx"><b>每週好文</b><small>每週一篇文章分享</small></span></a><a class="ct" href="#reading"><span class="ci"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19V6a2 2 0 0 1 2-2h5v15H6a2 2 0 0 0-2 2zM20 19V6a2 2 0 0 0-2-2h-5v15h5a2 2 0 0 1 2 2"/></svg></span><span class="cx"><b>親子共讀</b><small>怎麼陪孩子讀、去哪裡借書</small></span></a><a class="ct" href="#books"><span class="ci"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4v16H5zM10 4h4v16h-4zM15.5 5l3.5-1 3 15-3.5 1z"/></svg></span><span class="cx"><b>好書推薦</b><small>0歲到高中，依年齡和主題挑書</small></span></a><a class="ct" href="#videos"><span class="ci"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m10 9 5 3-5 3z"/></svg></span><span class="cx"><b>育兒影片推薦</b><small>政府單位製作，依年齡挑影片</small></span></a><a class="ct" href="#services"><span class="ci"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.6-7 10-7 10z"/></svg></span><span class="cx"><b>更多親子服務</b><small>教具陪玩、臺東親子活動</small></span></a><a class="ct ln" href="https://lin.ee/zpl0WwJ" target="_blank" rel="noopener"><span class="ci"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5c0-4.1-4-7.5-9-7.5s-9 3.4-9 7.5c0 3.7 3.2 6.8 7.6 7.4L10 22l3.4-3.1c4.5-.6 7.6-3.7 7.6-7.4z"/></svg></span><span class="cx"><b>加入官方LINE</b><small>最新資訊不漏接</small></span></a></nav>
   <form class="search" id="sf" role="search">
    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
@@ -487,9 +494,9 @@ fromHash();
 loadSheet().then(fromHash);
 }
 </script>
-<script src="articles.js?v=20261117b"></script>
+<script src="articles.js?v=20261124w&o=20261117b"></script>
 <script src="books.js?v=20261124"></script>
-<script src="videos.js?v=20261124e"></script>
+<script src="videos.js?v=20261124g"></script>
 <!-- ===== 瀏覽人次與回饋（開始）=====
   把整段貼在網頁的 </body> 前面。只需要改下面兩個地方：
   1. endpoint：貼上 Apps Script 部署後的「網頁應用程式網址」

@@ -28,7 +28,7 @@ const acts=a=>`<div class="aa"><a class="go" href="${esc(a.u)}" target="_blank" 
 const meta=a=>`<div class="am"><span class="ty${a.ty==='文章'?'':' v'}">${esc(a.ty)}</span><span>${esc(a.c)}</span><span>・${fmt(a.d)} 分享</span></div>`;
 const sec=document.getElementById('articles');
 const tz=document.getElementById('rdTeaser');
-if(tz&&feat){tz.innerHTML=`<span class="tb"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6c-2-1.5-5-2-8-1.5v13c3-.5 6 0 8 1.5 2-1.5 5-2 8-1.5v-13c-3-.5-6 0-8 1.5zM12 6v13"/></svg></span><span><span class="tl">本週好文・${fmt(feat.d)}</span><span class="tt">${esc(feat.t)}</span></span><span class="tg">去看看 →</span>`;tz.hidden=false}
+if(tz&&feat){tz.innerHTML=`<span class="tb"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6c-2-1.5-5-2-8-1.5v13c3-.5 6 0 8 1.5 2-1.5 5-2 8-1.5v-13c-3-.5-6 0-8 1.5zM12 6v13"/></svg></span><span><span class="tl">本週好文・${fmt(feat.d)}</span><span class="tt">${esc(feat.t)}</span></span><span class="tg">去看看 →</span>`;tz.hidden=false;document.getElementById('wkBox').hidden=false}
 if(!feat){if(sec)sec.hidden=true}
 else{
  $('#rdFeat').innerHTML=`<article class="feat-a"><span class="lab">本週好文</span><h3>${esc(feat.t)}</h3><div class="asrc">${esc(feat.src)}</div><p class="as">${esc(feat.s)}</p>${acts(feat)}</article>`;
