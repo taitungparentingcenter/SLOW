@@ -24,7 +24,7 @@ const CAT=['全部',...new Set(pub.map(a=>a.c))];
 const st={c:'全部',q:''};
 const line=a=>`📖 本週好文｜${a.t}\n${a.s}\n（來源：${a.src}）\n👉 ${a.u}`;
 const hl=(t,q)=>{const e=esc(t);if(!q)return e;const r=esc(q).replace(/[.*+?^${}()|[\]\\]/g,'\\$&');return e.replace(new RegExp(r,'gi'),m=>`<mark>${m}</mark>`)};
-const acts=a=>`<div class="aa"><a class="go" href="${esc(a.u)}" target="_blank" rel="noopener">閱讀原文${a.ty==='文章'?'':'・'+esc(a.ty)}</a><a class="ln" href="https://social-plugins.line.me/lineit/share?url=${encodeURIComponent(a.u)}" target="_blank" rel="noopener">分享到 LINE</a><button type="button" data-cp="${a.n}">複製分享文字</button></div>`;
+const acts=a=>`<div class="aa"><a class="go" href="${esc(a.u)}" target="_blank" rel="noopener">閱讀原文${a.ty==='文章'?'':'・'+esc(a.ty)}</a><button type="button" data-cp="${a.n}">複製分享文字</button></div>`;
 const meta=a=>`<div class="am"><span class="ty${a.ty==='文章'?'':' v'}">${esc(a.ty)}</span><span>${esc(a.c)}</span><span>・${fmt(a.d)} 分享</span></div>`;
 const sec=document.getElementById('articles');
 const tz=document.getElementById('rdTeaser');
