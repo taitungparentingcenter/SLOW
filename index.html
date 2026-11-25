@@ -169,6 +169,7 @@ main.band{padding-bottom:clamp(20px,3vw,36px)}
 .rdcount{font-size:14px;color:var(--soft);margin:0 0 10px}
 .hpop{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:12px;font-size:14.5px}.hpop .kw{background:var(--card);color:var(--ink);min-height:40px;padding:6px 14px;font-size:15px}
 .teaser{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:12px;align-items:center;max-width:760px;margin:0 0 16px;padding:14px 16px;border-radius:18px;background:light-dark(#1f6fa8,#1d3446);color:#fff;text-decoration:none;box-shadow:0 5px 0 rgba(10,40,70,.25);transition:transform .15s}
+.mvsec{margin-top:28px;padding-top:18px;border-top:2px dashed var(--line)}.mvh{font-size:22px;margin:0 0 6px}
 .blib{margin-top:6px;padding-top:10px;border-top:1px dashed var(--line);display:flex;flex-direction:column;gap:4px}.blb{align-self:flex-start;display:inline-block;background:#1f6fa8;color:#fff;font-weight:700;text-decoration:none;border-radius:10px;padding:8px 14px;min-height:40px}.blb:hover{background:#185a89}.blb:focus-visible{outline:3px solid var(--acc);outline-offset:2px}.blib span{font-size:13.5px;color:var(--mute,#6b5a4a)}
 .wkbox{max-width:760px;margin:0 0 16px;padding:12px 14px 6px;border-radius:18px;background:light-dark(#1f6fa8,#1d3446);color:#fff;box-shadow:0 5px 0 rgba(10,40,70,.25)}.wkbox[hidden],.wkr[hidden]{display:none!important}
 .wkbt{margin:0 0 4px;font-size:17px;font-weight:900;color:#fff}
@@ -343,6 +344,13 @@ function wk(){if(location.hash!=='#week')return;var n=0;(function f(){var b=docu
   <p class="rdcount" id="vdCount" aria-live="polite"></p>
   <div class="rdlist" id="vdList"></div>
   <button type="button" class="bkmore" id="vdMore" hidden>顯示更多影片</button>
+  <div class="mvsec" id="movies">
+   <h3 class="mvh">🎬 電影推薦</h3>
+   <p class="desc">依孩子的年齡挑一部一起看，也有推薦給照顧者自己看的電影。這裡只放文字介紹，片源請透過合法的串流平台或圖書館借閱。看之前可以先看「提醒」，必要時大人先看過。</p>
+   <div class="bkf"><p class="lbl">適合誰看</p><div class="rdf" id="mvAud" role="group" aria-label="適合對象" style="margin:0"></div></div>
+   <p class="rdcount" id="mvCount" aria-live="polite"></p>
+   <div class="rdlist" id="mvList"></div>
+  </div>
   <p class="desc" style="margin-top:14px">影片版權屬原製作單位，本站只提供簡介與 YouTube 連結。影片內容是一般性的資訊，孩子的個別狀況請和社工或專業人員討論。</p>
  </div>
 </section>
@@ -497,6 +505,7 @@ loadSheet().then(fromHash);
 </script>
 <script src="articles.js?v=20261125b"></script>
 <script src="books.js?v=20261125"></script>
+<script src="movies.js?v=20261125"></script>
 <script src="videos.js?v=20261125b"></script>
 <!-- ===== 瀏覽人次與回饋（開始）=====
   把整段貼在網頁的 </body> 前面。只需要改下面兩個地方：
