@@ -255,6 +255,31 @@ section.bk{background:var(--bg);border-top:1px solid var(--line)}
 .fsb svg{flex:none}
 .cover .ct.ln b,.cover .ct.ln small{color:#fff}
 
+/* 特殊兒少專區 */
+.t-sp{--c:light-dark(#0f7f86,#6fd6dc);--cb:light-dark(#dcf3f4,#173a3c)}
+.cover .ct.t-sp{border-bottom:5px solid var(--c)}
+.cover .ct.t-sp::before{content:"";position:absolute;right:-34px;top:-38px;width:120px;height:120px;border-radius:50%;background:var(--cb);z-index:0}
+#special .rdh svg{color:light-dark(#0f7f86,#6fd6dc)}
+.spintro{display:grid;gap:12px;margin:14px 0 18px;max-width:900px}
+.spnote{background:light-dark(#dcf3f4,#173a3c);border-radius:16px;padding:14px 18px}
+.spnote b{font-size:16px}.spnote p{margin:4px 0 0;line-height:1.7}
+.spg{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin-top:10px}
+.spg>div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px}
+.spg h4{margin:0 0 4px;font-size:15.5px}.spg p{margin:0;font-size:14.5px;line-height:1.65;color:var(--ink)}
+.spg a{color:var(--acc);font-weight:700}
+.sphelp{margin-top:0}.spwarm{background:var(--coralbg)!important;border-color:transparent!important}
+.spmore>summary{font-size:15.5px}
+.spc summary{grid-template-columns:auto minmax(0,1fr) auto!important}
+.spi{width:46px;height:46px;border-radius:14px;background:light-dark(#dcf3f4,#173a3c);color:light-dark(#0f7f86,#6fd6dc);font-size:11.5px;font-weight:800;letter-spacing:.02em;overflow:hidden}
+.spe{font-size:13px;font-weight:700;color:light-dark(#0f7f86,#6fd6dc);border:1px solid currentColor;border-radius:6px;padding:0 6px;margin-left:4px;white-space:nowrap}
+.spb{padding-left:20px!important}
+.spc{scroll-margin-top:84px}
+.sps h4{margin:14px 0 4px;font-size:15.5px}.sps ul{margin:0;padding-left:1.3em;line-height:1.7}.sps li{margin:2px 0}
+.spdo{background:light-dark(#eef8ef,#1f3a2a);border-radius:12px;padding:2px 14px 10px;margin-top:12px}
+.spb .br{margin-top:12px}
+.spcare{margin:10px 0 0;background:light-dark(#fff3e1,#3a2a1b);border-radius:10px;padding:8px 10px;font-size:15px;line-height:1.65}
+.sph{margin:10px 0 12px;font-size:15px;line-height:1.65}
+.spb .src a{color:var(--acc)}
 .topbar{display:none;position:sticky;top:0;z-index:20;background:var(--band);color:var(--bandink);box-shadow:0 2px 8px rgba(0,0,0,.12)}
 .topbar .wrap{display:flex;align-items:center;gap:12px;padding:10px max(5vw,16px)}
 .topbar .home{display:inline-flex;align-items:center;min-height:44px;padding:8px 16px;border-radius:999px;background:var(--card);color:var(--ink);font-weight:700;text-decoration:none}
@@ -271,6 +296,7 @@ body[data-view=articles] section.band:not(#articles),body[data-view=reading] sec
 .cover .ct.ln{grid-column:1/-1}
 body[data-view=videos] header.band,body[data-view=videos] main,body[data-view=videos] section.band:not(#videos){display:none!important}
 body[data-view=movies] header.band,body[data-view=movies] main,body[data-view=movies] section.band:not(#movies){display:none!important}
+body[data-view=special] header.band,body[data-view=special] main,body[data-view=special] section.band:not(#special){display:none!important}
 .vtag{font-size:13px;border-radius:6px;padding:1px 8px;background:var(--coralbg);color:var(--ink)}
 .vf a{color:var(--acc);font-weight:700}
 .vwk{background:var(--card);border:2px solid var(--acc);border-radius:16px;padding:14px 16px;margin:6px 0 16px}.vwk[hidden]{display:none!important}.vwk{scroll-margin-top:72px;transition:box-shadow .3s}.vwk.flash{box-shadow:0 0 0 4px var(--coralbg)}.wkh{margin:0 0 8px;font-size:18px}.wkh small{font-weight:400;color:var(--mute,#666);font-size:14px}.wkl{display:grid;gap:8px}.wki{display:grid;grid-template-columns:5.6em minmax(0,1fr);gap:8px;align-items:baseline;text-decoration:none;color:var(--ink);padding:8px 10px;border-radius:10px;background:var(--coralbg)}.wki .vtag{white-space:nowrap;flex-shrink:0}.wki b{font-weight:600;line-height:1.5}.wki:focus-visible{outline:3px solid var(--acc)}
@@ -281,7 +307,7 @@ body[data-view=movies] header.band,body[data-view=movies] main,body[data-view=mo
 </style>
 </head>
 <body>
-<script>(function(){var S=['qa','articles','reading','books','videos','movies','services'];function v(){var h=location.hash.slice(1);var w=h==='week'?'videos':S.indexOf(h)>-1?h:(h&&h!=='home'?'qa':'home');document.body.setAttribute('data-view',w);var t={qa:'常見問答',articles:'每週好文',reading:'親子共讀',books:'好書推薦',videos:'影片推薦',movies:'電影推薦',services:'更多親子服務'};var e=document.getElementById('pgName');if(e)e.textContent=t[w]||'';return w}
+<script>(function(){var S=['qa','articles','reading','books','videos','movies','special','services'];function v(){var h=location.hash.slice(1);var w=h==='week'?'videos':S.indexOf(h)>-1?h:(h&&h!=='home'?'qa':'home');document.body.setAttribute('data-view',w);var t={qa:'常見問答',articles:'每週好文',reading:'親子共讀',books:'好書推薦',videos:'影片推薦',movies:'電影推薦',special:'特殊兒少專區',services:'更多親子服務'};var e=document.getElementById('pgName');if(e)e.textContent=t[w]||'';return w}
 function wk(){if(location.hash!=='#week')return;var n=0;(function f(){var b=document.getElementById('vdWeek');if(b&&!b.hidden){b.scrollIntoView({block:'start'});b.classList.add('flash');setTimeout(function(){b.classList.remove('flash')},1600)}else if(n++<20)setTimeout(f,100)})()}window.addEventListener('hashchange',function(){v();window.scrollTo(0,0);wk()});document.addEventListener('DOMContentLoaded',function(){v();wk()});v()})();</script>
 <div class="topbar" id="topbar"><div class="wrap"><a class="home" href="#home">← 回首頁</a><span class="pgn" id="pgName"></span></div></div>
 <header class="band">
@@ -290,7 +316,7 @@ function wk(){if(location.hash!=='#week')return;var n=0;(function f(){var b=docu
   <h1>謝謝你，<br>陪孩子走這一段路</h1>
   <p class="lede">給照顧者們的實用小指南。你的陪伴，正在一點一點改變孩子的生命。孩子哭鬧、生氣、想家的時候，這裡有些小方法，陪你一起想。</p>
   <section class="wkbox" id="wkBox" aria-label="本週推薦" hidden><h2 class="wkbt">本週推薦</h2><a class="wkr" id="rdTeaser" href="#articles" hidden></a><a class="wkr" id="vdTeaser" href="#week" hidden></a></section>
-  <h2 class="covh">今天想找些什麼？<svg width="34" height="22" viewBox="0 0 34 22" aria-hidden="true"><path d="M2 14c5-9 9-9 13 0s8 9 13 0" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></h2><nav class="cover" aria-label="選擇要看的內容"><a class="ct t-qa" href="#qa"><span class="ci"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></span><span class="cx"><b>常見問答</b><small>孩子哭鬧、生氣、想家…輸入關鍵字找方法</small><span class="fsb" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>遇到什麼狀況？</span></span></a><div class="cgrp t-read"><svg class="deco" viewBox="0 0 120 120" aria-hidden="true"><circle cx="80" cy="80" r="46"/><circle cx="22" cy="30" r="6"/><circle cx="40" cy="12" r="3.5"/></svg><span class="glab"><i></i>一起讀書</span><a class="ct" href="#reading"><span class="ci"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19V6a2 2 0 0 1 2-2h5v15H6a2 2 0 0 0-2 2zM20 19V6a2 2 0 0 0-2-2h-5v15h5a2 2 0 0 1 2 2"/></svg></span><span class="cx"><b>親子共讀</b><small>怎麼陪孩子讀、去哪裡借書</small></span></a><a class="ct" href="#books"><span class="ci"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4v16H5zM10 4h4v16h-4zM15.5 5l3.5-1 3 15-3.5 1z"/></svg></span><span class="cx"><b>好書推薦</b><small>0歲到高中，依年齡和主題挑書</small></span></a></div><div class="cgrp t-watch"><svg class="deco" viewBox="0 0 120 120" aria-hidden="true"><circle cx="80" cy="80" r="46"/><circle cx="22" cy="30" r="6"/><circle cx="40" cy="12" r="3.5"/></svg><span class="glab"><i></i>一起看片</span><a class="ct" href="#videos"><span class="ci"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m10 9 5 3-5 3z"/></svg></span><span class="cx"><b>影片推薦</b><small>育兒及親子共賞影片</small></span></a><a class="ct" href="#movies"><span class="ci"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 4v16M17 4v16M3 9h4M3 15h4M17 9h4M17 15h4"/></svg></span><span class="cx"><b>電影推薦</b><small>依年齡挑電影，也有給照顧者看的</small></span></a></div><a class="ct t-more" href="#services"><span class="ci"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.6-7 10-7 10z"/></svg></span><span class="cx"><b>更多親子服務</b><small>教具陪玩、臺東親子活動</small></span></a><a class="ct ln" href="https://lin.ee/zpl0WwJ" target="_blank" rel="noopener"><span class="ci"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5c0-4.1-4-7.5-9-7.5s-9 3.4-9 7.5c0 3.7 3.2 6.8 7.6 7.4L10 22l3.4-3.1c4.5-.6 7.6-3.7 7.6-7.4z"/></svg></span><span class="cx"><b>加入官方LINE</b><small>最新資訊不漏接</small></span></a></nav>
+  <h2 class="covh">今天想找些什麼？<svg width="34" height="22" viewBox="0 0 34 22" aria-hidden="true"><path d="M2 14c5-9 9-9 13 0s8 9 13 0" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></h2><nav class="cover" aria-label="選擇要看的內容"><a class="ct t-qa" href="#qa"><span class="ci"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></span><span class="cx"><b>常見問答</b><small>孩子哭鬧、生氣、想家…輸入關鍵字找方法</small><span class="fsb" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>遇到什麼狀況？</span></span></a><div class="cgrp t-read"><svg class="deco" viewBox="0 0 120 120" aria-hidden="true"><circle cx="80" cy="80" r="46"/><circle cx="22" cy="30" r="6"/><circle cx="40" cy="12" r="3.5"/></svg><span class="glab"><i></i>一起讀書</span><a class="ct" href="#reading"><span class="ci"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19V6a2 2 0 0 1 2-2h5v15H6a2 2 0 0 0-2 2zM20 19V6a2 2 0 0 0-2-2h-5v15h5a2 2 0 0 1 2 2"/></svg></span><span class="cx"><b>親子共讀</b><small>怎麼陪孩子讀、去哪裡借書</small></span></a><a class="ct" href="#books"><span class="ci"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4v16H5zM10 4h4v16h-4zM15.5 5l3.5-1 3 15-3.5 1z"/></svg></span><span class="cx"><b>好書推薦</b><small>0歲到高中，依年齡和主題挑書</small></span></a></div><div class="cgrp t-watch"><svg class="deco" viewBox="0 0 120 120" aria-hidden="true"><circle cx="80" cy="80" r="46"/><circle cx="22" cy="30" r="6"/><circle cx="40" cy="12" r="3.5"/></svg><span class="glab"><i></i>一起看片</span><a class="ct" href="#videos"><span class="ci"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m10 9 5 3-5 3z"/></svg></span><span class="cx"><b>影片推薦</b><small>育兒及親子共賞影片</small></span></a><a class="ct" href="#movies"><span class="ci"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 4v16M17 4v16M3 9h4M3 15h4M17 9h4M17 15h4"/></svg></span><span class="cx"><b>電影推薦</b><small>依年齡挑電影，也有給照顧者看的</small></span></a></div><a class="ct t-sp" href="#special"><span class="ci"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18z"/><path d="M8.5 13.5s1.2 1.8 3.5 1.8 3.5-1.8 3.5-1.8M9 9.5h.01M15 9.5h.01"/></svg></span><span class="cx"><b>特殊兒少專區</b><small>認識過動、自閉、唐氏症、情障…</small></span></a><a class="ct t-more" href="#services"><span class="ci"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.6-7 10-7 10z"/></svg></span><span class="cx"><b>更多親子服務</b><small>教具陪玩、臺東親子活動</small></span></a><a class="ct ln" href="https://lin.ee/zpl0WwJ" target="_blank" rel="noopener"><span class="ci"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5c0-4.1-4-7.5-9-7.5s-9 3.4-9 7.5c0 3.7 3.2 6.8 7.6 7.4L10 22l3.4-3.1c4.5-.6 7.6-3.7 7.6-7.4z"/></svg></span><span class="cx"><b>加入官方LINE</b><small>最新資訊不漏接</small></span></a></nav>
   <form class="search" id="sf" role="search">
    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
    <input id="q" type="search" placeholder="搜尋，例如：哭鬧、想回家" aria-label="搜尋問答" autocomplete="off">
@@ -394,6 +420,32 @@ function wk(){if(location.hash!=='#week')return;var n=0;(function f(){var b=docu
    <div class="rdlist" id="mvList"></div>
    <button type="button" class="bkmore" id="mvMore" hidden>顯示更多電影</button>
   <p class="desc" style="margin-top:14px">電影分級依文化部影視及流行音樂產業局「電影片分級資訊查詢網」；查不到的會留白。</p>
+ </div>
+</section>
+<section class="band bk" id="special" aria-labelledby="spt">
+ <div class="wrap">
+  <div class="head"><div><h2 id="spt" class="rdh"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18z"/><path d="M8.5 13.5s1.2 1.8 3.5 1.8 3.5-1.8 3.5-1.8M9 9.5h.01M15 9.5h.01"/></svg>特殊兒少專區</h2><p class="desc">孩子的一些行為，背後可能有身心發展上的原因。認識這些狀況，能幫你少一點自責、多一點方法。每一項都有「照顧者可以這樣做」，也附上參考資料。</p></div></div>
+  <div class="spintro">
+   <div class="spnote"><b>先看這裡</b><p>這裡的資訊是幫助你<strong>理解</strong>孩子，不是用來自己判斷或幫孩子貼標籤。同一個行為可能有很多種原因，需要由醫師或專業團隊評估。</p></div>
+   <details class="rdmore spmore"><summary>診斷、特教身分、身障證明，有什麼不一樣？</summary>
+    <div class="spg">
+     <div><h4>醫療診斷</h4><p>由醫師看診評估，例如兒童心智科、小兒神經科。像 ADHD、自閉症、唐氏症都是醫療診斷。</p></div>
+     <div><h4>特殊教育身分</h4><p>由學校提報、縣市鑑定。依特殊教育法分為智能障礙、情緒行為障礙、學習障礙、自閉症、發展遲緩等13類，通過後孩子在學校可以得到特教支持。</p></div>
+     <div><h4>身心障礙證明</h4><p>向戶籍所在地的公所申請，經醫院鑑定和需求評估後核發，可以使用社會福利服務。</p></div>
+    </div>
+    <p class="desc" style="margin-top:10px">三者是不同的制度。孩子有醫療診斷，不一定有特教身分或身障證明；反過來也一樣。</p>
+   </details>
+   <div class="spg sphelp">
+    <div><h4>0–6歲，覺得孩子發展比較慢</h4><p>按時做兒童預防保健的發展篩檢；醫師可以轉介到兒童發展聯合評估中心。也可以請你的社工協助。</p></div>
+    <div><h4>上學的孩子，在學校很辛苦</h4><p>找學校輔導室或特教承辦老師討論，必要時提報特教鑑定；也可以帶孩子看兒童心智科。</p></div>
+    <div class="spwarm"><h4>照顧安置孩子的你</h4><p>經歷過傷害或分離的孩子，常出現很像過動或對立反抗的反應。可以先看<a href="#special" data-sp="rad">「創傷與依附困難」</a>。</p></div>
+   </div>
+  </div>
+  <div class="rdq"><label for="spQ">想找哪一種狀況？</label><div class="rdqbox"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input id="spQ" type="search" placeholder="例如：過動、ADHD、毒寶寶、唐氏症" autocomplete="off"><button type="button" id="spQc" hidden>清除</button></div></div>
+  <div class="rdf" id="spGroup" role="group" aria-label="依類型篩選"></div>
+  <p class="rdcount" id="spCount" aria-live="polite"></p>
+  <div class="list" id="spList"></div>
+  <p class="desc" style="margin-top:16px">本專區內容整理自衛生福利部、教育部、醫學中心及國內外公部門衛教資料，為一般性說明，不能取代專業評估。若孩子有立即危險，請撥打 119／110。</p>
  </div>
 </section>
 <section class="band svc" id="services" aria-labelledby="svt">
@@ -549,6 +601,7 @@ loadSheet().then(fromHash);
 <script src="books.js?v=20261125"></script>
 <script src="movies.js?v=20261125h"></script>
 <script src="videos.js?v=20261125b"></script>
+<script src="special.js?v=20261126"></script>
 <!-- ===== 瀏覽人次與回饋（開始）=====
   把整段貼在網頁的 </body> 前面。只需要改下面兩個地方：
   1. endpoint：貼上 Apps Script 部署後的「網頁應用程式網址」
