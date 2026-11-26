@@ -281,6 +281,8 @@ section.bk{background:var(--bg);border-top:1px solid var(--line)}
 .sph{margin:10px 0 12px;font-size:15px;line-height:1.65}
 .spgo{display:inline-flex;align-items:center;gap:4px;margin-top:10px;min-height:44px;padding:8px 14px;border-radius:12px;background:light-dark(#0f7f86,#6fd6dc);color:light-dark(#fff,#10282a)!important;font-weight:700;font-size:15px;text-decoration:none;line-height:1.4}.spgo:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
 .splink{margin:12px 0 4px;display:flex;flex-direction:column;align-items:flex-start;gap:4px}.splink .spgo{margin-top:0}.splink small{font-size:13.5px;color:var(--soft)}
+.sptt{margin:12px 0 0;background:light-dark(#e6f1fa,#1d3446);border-radius:12px;padding:10px 12px;font-size:15px;line-height:1.65}.sptt p{margin:4px 0}.sptt a{color:var(--acc);font-weight:700;font-size:14px}.sptt p a{font-size:inherit;white-space:nowrap}
+.splocal>summary{background:light-dark(#dcf3f4,#173a3c)}.spgrp h4{margin:16px 0 2px;font-size:16px}.spres a[href^="tel:"]{white-space:nowrap}.sphelp a:not(.spgo){color:var(--acc);font-weight:700}
 .spres{margin:10px 0 0;padding-left:1.2em;line-height:1.7;font-size:15px}.spres li{margin:6px 0}.spres a{color:var(--acc);font-weight:700}
 .spb .src a{color:var(--acc)}
 .topbar{display:none;position:sticky;top:0;z-index:20;background:var(--band);color:var(--bandink);box-shadow:0 2px 8px rgba(0,0,0,.12)}
@@ -448,9 +450,39 @@ function wk(){if(location.hash!=='#week')return;var n=0;(function f(){var b=docu
      <li><b>1925 安心專線（衛生福利部，24小時）</b>：孩子或照顧者心情很難受、需要有人談談時可以撥打。</li>
     </ul>
    </details>
+   <details class="rdmore spmore splocal" id="spLocal"><summary>📍 臺東在地資源（早療、特教、心理、醫院）</summary>
+    <div class="spgrp"><h4>早期療育（0–6歲）</h4><ul class="spres">
+     <li><b>臺東縣兒童發展通報轉介暨個案管理中心</b>：發展諮詢、通報、轉介評估與療育、福利補助諮詢。<a href="tel:089333905">089-333905</a>｜臺東市正氣北路374號｜週一至週五 8:00–17:00</li>
+     <li><b>台東馬偕紀念醫院 兒童發展聯合評估中心</b>：<a href="tel:089351642">089-351642</a>｜臺東市長沙街303巷1號｜<a href="https://ttw3.mmh.org.tw/departmain3.php?id=154" target="_blank" rel="noopener">中心網頁</a></li>
+     <li><b>台東基督教醫院 兒童發展聯合評估中心</b>：<a href="tel:089960115">089-960115</a>｜臺東市開封街350號</li>
+     <li><b>學前外展式聯合評估</b>：縣府與馬偕聯評中心合作，到關山、鹿野、東河等鄉鎮辦理，場次可問通報轉介中心或幼兒園。</li>
+     <li><a href="https://system.sfaa.gov.tw/cecm/resourceView/detail2?qtype1=1&amp;qtype2=2" target="_blank" rel="noopener">衛福部社家署 發展遲緩兒童通報暨個案管理服務網</a>：可查全國最新的聯評中心與通報轉介中心資料。</li>
+    </ul></div>
+    <div class="spgrp"><h4>特殊教育與學生輔導</h4><ul class="spres">
+     <li><a href="https://serc.boe.ttct.edu.tw/identification/disability" target="_blank" rel="noopener"><b>臺東特教資源網：鑑定安置</b></a>：學前、國教、高中各階段的鑑定安置計畫、提報表件和家長說明單。</li>
+     <li><b>照顧者在鑑定中的權利</b>：知道鑑定目的與流程、決定是否申請與邀誰陪同、參與所有會議、不同意結果可以申訴。</li>
+     <li><b>臺東縣學生輔導諮商中心（教育處）</b>：有心理師、社工師，支援學校輔導工作，一般由學校輔導室轉介。<a href="tel:089323756">089-323756</a>｜臺東市中華路一段719巷51號</li>
+     <li><b>國立臺東大學附屬特殊教育學校</b>：<a href="tel:089229912">089-229912</a>｜臺東市中興路三段401巷170號</li>
+    </ul></div>
+    <div class="spgrp"><h4>心理健康</h4><ul class="spres">
+     <li><b>臺東縣臺東市社區心理衛生中心</b>：<a href="tel:089230295">089-230295</a>（24小時）｜臺東市更生北路384巷50號4樓｜可申請心理諮商</li>
+     <li><b>臺東縣成功鎮社區心理衛生中心</b>：<a href="tel:089854200">089-854200</a>｜成功鎮五權路71號</li>
+     <li>其他鄉鎮的衛生所也有心理諮商據點，可以先打給社區心理衛生中心詢問。</li>
+     <li><b>1925 安心專線</b>（衛生福利部，24小時）</li>
+    </ul></div>
+    <div class="spgrp"><h4>臺東的醫院（看診前請先電話確認科別與門診時間）</h4><ul class="spres">
+     <li>台東馬偕紀念醫院｜臺東市長沙街303巷1號｜社工室 <a href="tel:089310150">089-310150</a></li>
+     <li>台東基督教醫院｜臺東市開封街350號｜<a href="tel:089960888">089-960888</a></li>
+     <li>衛生福利部臺東醫院｜臺東市五權街1號｜<a href="tel:089324112">089-324112</a></li>
+     <li>臺北榮民總醫院臺東分院｜臺東市更生路1000號｜<a href="tel:089222995">089-222995</a></li>
+     <li>台東聖母醫院｜臺東市杭州街2號｜<a href="tel:089322833">089-322833</a></li>
+     <li>關山慈濟醫院｜關山鎮和平路125-5號｜<a href="tel:089814880">089-814880</a></li>
+    </ul></div>
+    <p class="desc" style="margin-top:8px">資料整理自衛福部社家署、國民健康署、臺東縣政府、臺東縣衛生局、臺東縣教育處及國立臺東大學公開資料（2026年11月查詢）。電話或地址如有異動，以各單位公告為準。</p>
+   </details>
    <div class="spg sphelp">
-    <div><h4>0–6歲，覺得孩子發展比較慢</h4><p>先對照各年齡的發展階段；未滿7歲有免費的兒童預防保健和6次兒童發展篩檢，醫師可以轉介到兒童發展聯合評估中心。也可以請你的社工協助。</p><a class="spgo" href="https://www.hpa.gov.tw/Pages/List.aspx?nodeid=1595" target="_blank" rel="noopener">📈 看看各年齡的發展階段</a></div>
-    <div><h4>上學的孩子，在學校很辛苦</h4><p>找學校輔導室或特教承辦老師討論，必要時提報特教鑑定；也可以帶孩子看兒童心智科。</p></div>
+    <div><h4>0–6歲，覺得孩子發展比較慢</h4><p>先對照各年齡的發展階段；未滿7歲有免費的兒童預防保健和6次兒童發展篩檢，醫師可以轉介到兒童發展聯合評估中心。在臺東可以打給兒童發展通報轉介中心 <a href="tel:089333905">089-333905</a> 諮詢，也可以請你的社工協助。</p><a class="spgo" href="https://www.hpa.gov.tw/Pages/List.aspx?nodeid=1595" target="_blank" rel="noopener">📈 看看各年齡的發展階段</a></div>
+    <div><h4>上學的孩子，在學校很辛苦</h4><p>找學校輔導室或特教承辦老師討論，必要時提報特教鑑定；也可以帶孩子看兒童心智科。</p><a class="spgo" href="https://serc.boe.ttct.edu.tw/identification/disability" target="_blank" rel="noopener">📄 臺東特教資源網：鑑定安置</a></div>
     <div class="spwarm"><h4>照顧安置孩子的你</h4><p>經歷過傷害或分離的孩子，常出現很像過動或對立反抗的反應。可以先看<a href="#special" data-sp="rad">「創傷與依附困難」</a>。</p></div>
    </div>
   </div>
@@ -614,7 +646,7 @@ loadSheet().then(fromHash);
 <script src="books.js?v=20261125"></script>
 <script src="movies.js?v=20261125h"></script>
 <script src="videos.js?v=20261125b"></script>
-<script src="special.js?v=20261126d"></script>
+<script src="special.js?v=20261126f"></script>
 <!-- ===== 瀏覽人次與回饋（開始）=====
   把整段貼在網頁的 </body> 前面。只需要改下面兩個地方：
   1. endpoint：貼上 Apps Script 部署後的「網頁應用程式網址」
