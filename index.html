@@ -279,6 +279,8 @@ section.bk{background:var(--bg);border-top:1px solid var(--line)}
 .spb .br{margin-top:12px}
 .spcare{margin:10px 0 0;background:light-dark(#fff3e1,#3a2a1b);border-radius:10px;padding:8px 10px;font-size:15px;line-height:1.65}
 .sph{margin:10px 0 12px;font-size:15px;line-height:1.65}
+.spgo{display:inline-flex;align-items:center;gap:4px;margin-top:10px;min-height:44px;padding:8px 14px;border-radius:12px;background:light-dark(#0f7f86,#6fd6dc);color:light-dark(#fff,#10282a)!important;font-weight:700;font-size:15px;text-decoration:none;line-height:1.4}.spgo:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+.splink{margin:12px 0 4px;display:flex;flex-direction:column;align-items:flex-start;gap:4px}.splink .spgo{margin-top:0}.splink small{font-size:13.5px;color:var(--soft)}
 .spres{margin:10px 0 0;padding-left:1.2em;line-height:1.7;font-size:15px}.spres li{margin:6px 0}.spres a{color:var(--acc);font-weight:700}
 .spb .src a{color:var(--acc)}
 .topbar{display:none;position:sticky;top:0;z-index:20;background:var(--band);color:var(--bandink);box-shadow:0 2px 8px rgba(0,0,0,.12)}
@@ -447,7 +449,7 @@ function wk(){if(location.hash!=='#week')return;var n=0;(function f(){var b=docu
     </ul>
    </details>
    <div class="spg sphelp">
-    <div><h4>0–6歲，覺得孩子發展比較慢</h4><p>按時做兒童預防保健的發展篩檢；醫師可以轉介到兒童發展聯合評估中心。也可以請你的社工協助。</p></div>
+    <div><h4>0–6歲，覺得孩子發展比較慢</h4><p>先對照各年齡的發展階段；未滿7歲有免費的兒童預防保健和6次兒童發展篩檢，醫師可以轉介到兒童發展聯合評估中心。也可以請你的社工協助。</p><a class="spgo" href="https://www.hpa.gov.tw/Pages/List.aspx?nodeid=1595" target="_blank" rel="noopener">📈 看看各年齡的發展階段</a></div>
     <div><h4>上學的孩子，在學校很辛苦</h4><p>找學校輔導室或特教承辦老師討論，必要時提報特教鑑定；也可以帶孩子看兒童心智科。</p></div>
     <div class="spwarm"><h4>照顧安置孩子的你</h4><p>經歷過傷害或分離的孩子，常出現很像過動或對立反抗的反應。可以先看<a href="#special" data-sp="rad">「創傷與依附困難」</a>。</p></div>
    </div>
@@ -612,7 +614,7 @@ loadSheet().then(fromHash);
 <script src="books.js?v=20261125"></script>
 <script src="movies.js?v=20261125h"></script>
 <script src="videos.js?v=20261125b"></script>
-<script src="special.js?v=20261126c"></script>
+<script src="special.js?v=20261126d"></script>
 <!-- ===== 瀏覽人次與回饋（開始）=====
   把整段貼在網頁的 </body> 前面。只需要改下面兩個地方：
   1. endpoint：貼上 Apps Script 部署後的「網頁應用程式網址」
